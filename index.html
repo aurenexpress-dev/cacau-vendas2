@@ -80,7 +80,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     
 <!-- POPUP DESCONTO -->
-<div id="discountPopup" class="popup-overlay" style="display:none;">
+<div id="bonusPopup" class="popup-overlay" style="display:none;">
   <div class="popup-box">
 
     <!-- LOGO (opcional) -->
@@ -170,7 +170,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <!-- JS -->
 <script>
 function closePopup() {
-  document.getElementById("discountPopup").style.display = "none";
+  document.getElementById("bonusPopup").style.display = "none";
 }
 </script>
 
@@ -2925,7 +2925,7 @@ function trackPage() {
  <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const popup = document.getElementById("locationPopup");
+  const popup = document.getElementById("cidadeUsuario");
 
   if (!localStorage.getItem("discountPopupShown")) {
       popup.style.display = "flex";
@@ -2935,14 +2935,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function closePopup() {
-  document.getElementById("locationPopup").style.display = "none";
+  document.getElementById("cidadeUsuario").style.display = "none";
 }
 </script>
 
 
 <!-- POPUP LOJA PRÓXIMA -->
-<div id="locationPopup" class="popup-overlay" style="display:none;">
-  <div class="popup-box">
+<div id="cidadeUsuario" class="location-overlay">
+  <div class="location-box">
 	  
 	  <h2 class="titulo-cacau">Bem-vindo à Cacau Show</h2>
 
@@ -2989,7 +2989,7 @@ function closePopup() {
 	<script>
 
 function closeLocationPopup(){
-  document.getElementById("locationPopup").style.display="none";
+  document.getElementById("cidadeUsuario").style.display = "none";
 }
 
 function gerarDistancia(){
@@ -3026,7 +3026,7 @@ gerarDistancia();
 
 setTimeout(function(){
 
-document.getElementById("locationPopup").style.display="flex";
+document.getElementById("cidadeUsuario").style.display="flex";
 
 },8000);
 
