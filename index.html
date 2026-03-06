@@ -2992,13 +2992,13 @@ const distancia = (Math.random()*3+0.8).toFixed(1);
 document.getElementById("distanciaLoja").innerText = distancia + " km";
 }
 
-function pegarCidade(lat, lon){
+function detectarCidade(){
 
-fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=pt`)
+fetch("https://ipwho.is/")
 .then(response => response.json())
 .then(data => {
 
-let cidade = data.city || data.locality || data.principalSubdivision;
+let cidade = data.city || "sua região";
 
 document.getElementById("cidadeUsuario").innerText = cidade;
 
@@ -3009,51 +3009,21 @@ document.getElementById("cidadeUsuario").innerText = "sua região";
 
 }
 
-function pegarLocalizacao(){
-
-if(navigator.geolocation){
-
-navigator.geolocation.getCurrentPosition(
-
-function(position){
-
-const lat = position.coords.latitude;
-const lon = position.coords.longitude;
-
-pegarCidade(lat, lon);
-
-},
-
-function(error){
-
-document.getElementById("cidadeUsuario").innerText = "sua região";
-
-}
-
-);
-
-}else{
-
-document.getElementById("cidadeUsuario").innerText = "sua região";
-
-}
-
-}
-
 window.onload = function(){
+
+detectarCidade();
+gerarDistancia();
 
 setTimeout(function(){
 
 document.getElementById("locationPopup").style.display="flex";
-
-pegarLocalizacao();
-gerarDistancia();
 
 },8000);
 
 }
 
 </script>
+
 
 
 	
