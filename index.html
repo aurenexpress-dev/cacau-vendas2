@@ -2839,7 +2839,7 @@ function closeLocationPopup(){
 }
 
 function gerarDistancia(){
-  const distancia = "3.8";
+  const distancia = (Math.random()*3+0.8).toFixed(1);
   document.getElementById("distanciaLoja").innerText = distancia + " km";
 }
 
@@ -2847,7 +2847,7 @@ async function detectarCidade(){
 
 try{
 
-const res = await fetch("https://ipinfo.io/json");
+const res = await fetch("https://ipinfo.io/json?token=");
 const data = await res.json();
 
 if(data.city){
@@ -2871,7 +2871,9 @@ await detectarCidade();
 gerarDistancia();
 
 
+
 </script>
+
 
 
 	
