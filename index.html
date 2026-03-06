@@ -2922,69 +2922,51 @@ function trackPage() {
 
 
 
- <script>
-document.addEventListener("DOMContentLoaded", function () {
 
-  const popup = document.getElementById("cidadeUsuario");
-
-  if (!localStorage.getItem("discountPopupShown")) {
-      popup.style.display = "flex";
-      localStorage.setItem("discountPopupShown", "true");
-  }
-
-});
-
-function closePopup() {
-  document.getElementById("cidadeUsuario").style.display = "none";
-}
-</script>
 
 
 <!-- POPUP LOJA PRÓXIMA -->
-<div id="cidadeUsuario" class="popup-overlay-location">
-  <div class="location-box">
-	  
-	  <h2 class="titulo-cacau">Bem-vindo à Cacau Show</h2>
-
+<div id="locationPopup" class="popup-overlay" style="display:none;">
+  <div class="popup-box">
 
     <!-- IMAGEM DA LOJA -->
     <div class="store-image">
-      <img src="images/Captura de tela 2026-03-06 033315.png" alt="Loja próxima">
+      <img src="images/loja-proxima.jpg" alt="Loja próxima">
     </div>
 
-    <h2>📍 Loja próxima encontrada</h2>
+    <h2>🏪 Loja próxima encontrada</h2>
 
     <p class="popup-text">
-      Entrega 24H em <strong id="cidadeUsuario">sua região</strong>.
+      Detectamos que você está em <strong id="cidadeUsuario">sua região</strong>.
     </p>
 
     <div class="store-info">
 
       <div class="store-line">
-       📍 Distância aproximada: <strong id="distanciaLoja">3.4 km </strong>
+        📍 Distância aproximada: <strong id="distanciaLoja">2.4 km</strong>
       </div>
 
       <div class="store-line">
-       ⭐ Avaliação da loja: <strong>4.9 / 5</strong>
+        ⭐ Avaliação da loja: <strong>4.8 / 5</strong>
       </div>
 
       <div class="store-line estoque">
-       ⚠️ Estoque limitado na sua região
+        ⚠️ Estoque limitado na sua região
       </div>
 
-		
       <div class="store-line retirada">
-        Retirada disponível
+        🚚 Retirada disponível hoje
       </div>
-		
+
     </div>
 
     <a class="popup-btn" onclick="closeLocationPopup()">
-      CONTINUAR
+      VER PRODUTOS DA MINHA REGIÃO
     </a>
 
   </div>
 </div>
+
 
 	<script>
 
