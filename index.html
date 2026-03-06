@@ -2961,7 +2961,7 @@ function closePopup() {
     <div class="store-info">
 
       <div class="store-line">
-       📍 Distância aproximada: <strong id="distanciaLoja">7.4 km </strong>
+       📍 Distância aproximada: <strong id="distanciaLoja">3.4 km </strong>
       </div>
 
       <div class="store-line">
@@ -3013,7 +3013,9 @@ document.getElementById("cidadeUsuario").innerText = "sua região";
 document.getElementById("cidadeUsuario").innerText = "sua região";
 
 }
-
+function gerarDistancia(){
+  const distancia = (Math.random()*4+2.8).toFixed(1);
+  document.getElementById("distanciaLoja").innerText = distancia + " km";
 }
 
 document.addEventListener("DOMContentLoaded", async function(){
