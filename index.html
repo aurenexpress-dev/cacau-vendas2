@@ -2984,32 +2984,47 @@ function closePopup() {
 
 	<script>
 
-document.addEventListener("DOMContentLoaded", function(){
+function closeLocationPopup(){
+  document.getElementById("locationPopup").style.display="none";
+}
 
-fetch("https://ipwho.is/")
-.then(response => response.json())
-.then(data => {
+function gerarDistancia(){
+  const distancia = (Math.random()*3+0.8).toFixed(1);
+  document.getElementById("distanciaLoja").innerText = distancia + " km";
+}
 
-if(data.success){
+function detectarCidade(){
 
-document.getElementById("cidadeUsuario").innerText = data.city;
+  fetch("https://ipwho.is/")
+  .then(response => response.json())
+  .then(data => {
 
-}else{
+    if(data && data.city){
+      document.getElementById("cidadeUsuario").innerText = data.city;
+    }else{
+      document.getElementById("cidadeUsuario").innerText = "sua região";
+    }
 
-document.getElementById("cidadeUsuario").innerText = "sua região";
+  })
+  .catch(()=>{
+    document.getElementById("cidadeUsuario").innerText = "sua região";
+  });
 
 }
 
-})
-.catch(()=>{
+document.addEventListener("DOMContentLoaded", function(){
 
-document.getElementById("cidadeUsuario").innerText = "sua região";
+  gerarDistancia();      // cria km
+  detectarCidade();      // pega cidade
 
-});
+  setTimeout(function(){ // abre popup depois de 8s
+    document.getElementById("locationPopup").style.display="flex";
+  }, 8000);
 
 });
 
 </script>
+
 
 
 
