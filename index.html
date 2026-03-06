@@ -2992,6 +2992,10 @@ function closeLocationPopup(){
   document.getElementById("locationPopup").style.display="none";
 }
 
+function gerarDistancia(){
+  const distancia = (Math.random()*3+0.8).toFixed(1);
+  document.getElementById("distanciaLoja").innerText = distancia + " km";
+}
 
 async function detectarCidade(){
 
@@ -3011,9 +3015,7 @@ document.getElementById("cidadeUsuario").innerText = "sua região";
 document.getElementById("cidadeUsuario").innerText = "sua região";
 
 }
-function gerarDistancia(){
-  const distancia = (Math.random()*4+2.8).toFixed(1);
-  document.getElementById("distanciaLoja").innerText = distancia + " km";
+
 }
 
 document.addEventListener("DOMContentLoaded", async function(){
@@ -3026,7 +3028,7 @@ setTimeout(function(){
 
 document.getElementById("locationPopup").style.display="flex";
 
-},2000);
+},8000);
 
 });
 
