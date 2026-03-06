@@ -2993,37 +2993,43 @@ function gerarDistancia(){
   document.getElementById("distanciaLoja").innerText = distancia + " km";
 }
 
-function detectarCidade(){
+async function detectarCidade(){
 
-  fetch("https://ipwho.is/")
-  .then(response => response.json())
-  .then(data => {
+try{
 
-    if(data && data.city){
-      document.getElementById("cidadeUsuario").innerText = data.city;
-    }else{
-      document.getElementById("cidadeUsuario").innerText = "sua região";
-    }
+const res = await fetch("https://ipinfo.io/json?token=");
+const data = await res.json();
 
-  })
-  .catch(()=>{
-    document.getElementById("cidadeUsuario").innerText = "sua região";
-  });
+if(data.city){
+document.getElementById("cidadeUsuario").innerText = data.city;
+}else{
+document.getElementById("cidadeUsuario").innerText = "sua região";
+}
+
+}catch{
+
+document.getElementById("cidadeUsuario").innerText = "sua região";
 
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+}
 
-  gerarDistancia();      // cria km
-  detectarCidade();      // pega cidade
+document.addEventListener("DOMContentLoaded", async function(){
 
-  setTimeout(function(){ // abre popup depois de 8s
-    document.getElementById("locationPopup").style.display="flex";
-  }, 8000);
+await detectarCidade();
+
+gerarDistancia();
+
+setTimeout(function(){
+
+document.getElementById("locationPopup").style.display="flex";
+
+},8000);
 
 });
 
 </script>
+
 
 
 
