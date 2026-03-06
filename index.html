@@ -2807,7 +2807,7 @@ function trackPage() {
     <div class="store-info">
 
       <div class="store-line">
-        📍 Distância aproximada: <strong id="distanciaLoja">3.8 km</strong>
+        📍 Distância aproximada: <strong id="distanciaLoja">2.3 km</strong>
       </div>
 
       <div class="store-line">
@@ -2847,7 +2847,7 @@ async function detectarCidade(){
 
 try{
 
-const res = await fetch("https://ipapi.co/json/");
+const res = await fetch("https://ipinfo.io/json?token=");
 const data = await res.json();
 
 if(data.city){
