@@ -15,22 +15,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script>
 
-fetch("https://ipapi.co/json/")
-.then(res => res.json())
-.then(data => {
-
-console.log(data);
-
-document.getElementById("cidadeUsuario").innerText = data.city;
-
-})
-.catch(error => {
-console.log("erro",error);
-});
-
-</script>
 
   
     </head><body class="" data-current-store="null"><img src="imagem.jpg" loading="lazy" alt="Ovo de Páscoa">
@@ -2999,46 +2984,33 @@ function closePopup() {
 
 	<script>
 
-function closeLocationPopup(){
-document.getElementById("locationPopup").style.display="none";
-}
-
-function gerarDistancia(){
-const distancia = (Math.random()*3+0.8).toFixed(1);
-document.getElementById("distanciaLoja").innerText = distancia + " km";
-}
-
-function detectarCidade(){
+document.addEventListener("DOMContentLoaded", function(){
 
 fetch("https://ipwho.is/")
 .then(response => response.json())
 .then(data => {
 
-let cidade = data.city || "sua região";
+if(data.success){
 
-document.getElementById("cidadeUsuario").innerText = cidade;
+document.getElementById("cidadeUsuario").innerText = data.city;
+
+}else{
+
+document.getElementById("cidadeUsuario").innerText = "sua região";
+
+}
 
 })
 .catch(()=>{
+
 document.getElementById("cidadeUsuario").innerText = "sua região";
+
 });
 
-}
-
-window.onload = function(){
-
-detectarCidade();
-gerarDistancia();
-
-setTimeout(function(){
-
-document.getElementById("locationPopup").style.display="flex";
-
-},8000);
-
-}
+});
 
 </script>
+
 
 
 
