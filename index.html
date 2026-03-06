@@ -80,7 +80,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
     
 <!-- POPUP DESCONTO -->
-<div id="bonusPopup" class="popup-overlay-location" style="display:none;">
+<div id="bonusPopup" class="popup-overlay-bonus" style="display:none;">
   <div class="popup-box">
 
     <!-- LOGO (opcional) -->
@@ -104,7 +104,7 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 
 <!-- CSS -->
 <style>
-.popup-overlay-location{
+.popup-overlay-bonus{
   position: fixed;
   top: 0;
   left: 0;
@@ -172,6 +172,24 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 function closePopup() {
   document.getElementById("bonusPopup").style.display = "none";
 }
+</script>
+<script>
+
+function closePopup() {
+  document.getElementById("bonusPopup").style.display = "none";
+}
+
+/* ABRIR POPUP */
+window.addEventListener("load", function(){
+
+setTimeout(function(){
+
+document.getElementById("bonusPopup").style.display = "flex";
+
+}, 100); // abre quase instantâneo
+
+});
+
 </script>
 
 
