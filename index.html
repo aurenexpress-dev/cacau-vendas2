@@ -2901,7 +2901,8 @@ function closeLocationPopup(){
 
 function gerarDistancia(){
   const distancia = (Math.random()*3+0.8).toFixed(1);
-  document.getElementById("distanciaLoja").innerText = distancia + " km";
+  document.getElementById("cidadeUsuario").innerText =
+data.city + " - " + data.region;
 }
 
 async function detectarCidade(){
@@ -2931,9 +2932,9 @@ await detectarCidade();
 
 gerarDistancia();
 
-
-
+});
 </script>
+
 
 
 
