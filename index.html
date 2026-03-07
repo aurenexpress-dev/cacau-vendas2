@@ -2842,9 +2842,6 @@ function trackPage() {
 
     <div class="store-info">
 
-      <div class="store-line">
-        📍 Distância aproximada: <strong id="distanciaLoja">2.3 km</strong>
-      </div>
 
       <div class="store-line">
         ⭐ Avaliação da loja: <strong>4.8 / 5</strong>
@@ -2875,7 +2872,6 @@ function closeLocationPopup(){
 }
 
 function gerarDistancia(){
-  const distancia = (Math.random()*3+0.8).toFixed(1);
   document.getElementById("cidadeUsuario").innerText =
 data.city + " - " + data.region;
 }
