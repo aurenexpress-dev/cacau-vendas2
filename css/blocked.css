@@ -1,0 +1,184 @@
+/* Not Logged */
+.alert_onboarding span a {
+    text-decoration: underline;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+.alert_onboarding span a.link-small {
+    font-size: 11px;
+    line-height: 30px;
+    text-decoration: underline;
+}
+/*DESK*/
+@media (min-width: 992px) {
+    
+    .author .list-header .seguir-author{
+        display: block;
+    }
+    
+    .list-item  #botao-seguir-author-blog {
+        position: relative;
+    }
+
+    .list-item  #users_only {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .alert_onboarding {
+        display: none;
+        position: absolute;
+        z-index: 9;
+        width: 285px;
+        left: -290px;
+        top: -65px;
+        padding: 12px;
+        cursor: context-menu;
+        border-radius: 10px;
+        background-color: #000;
+        text-transform: none;
+        text-align: left;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+
+    .alert_onboarding::before {
+        position: absolute;
+        content: '';
+        bottom: -11%;
+        right: -10px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid #000;
+        transform: rotateZ(126deg);
+    }
+    
+    #botao-seguir-author .alert_onboarding {
+        display: none;
+        position: absolute;
+        z-index: 9;
+        width: 285px;
+        left: -290px;
+        top: 25px;
+        padding: 12px;
+        cursor: context-menu;
+        border-radius: 10px;
+        background-color: #000;
+        text-transform: none;
+        text-align: left;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+
+    #botao-seguir-author .alert_onboarding::before {
+        position: absolute;
+        content: '';
+        top: -9px;
+        right: -10px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid #000;
+        transform: rotateZ(122deg);
+    }
+
+    #botao-seguir-author-blog .alert_onboarding {
+        left: 0;
+    }
+    #botao-seguir-author-blog .alert_onboarding::before {
+        left: 30px;
+    }
+    
+    #botao-seguir-author .alert_onboarding {
+        left: 0;
+    }
+    #botao-seguir-author .alert_onboarding::before {
+        left: 30px;
+    }
+    
+    #botao-seguir-author-blog.seguir-author-blog-img .alert_onboarding {
+        left: 0;
+    }
+    #botao-seguir-author-blog.seguir-author-blog-img .alert_onboarding::before {
+        left: 148px;
+    }
+    
+    .post-header #botao-seguir-author .alert_onboarding {
+        left: -155px;
+    }
+    .post-header #botao-seguir-author .alert_onboarding::before {
+        left: 185px;
+    }
+
+    .list-header .alert_onboarding {
+        left: 65px;
+        top: 20px;
+    }
+
+    .list-item #users_only::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 55%;
+        transform: translateX(-50%);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #000;
+    }
+
+    .salvar-conteudo-materia .alert_onboarding {
+        left: -290px;
+    }
+
+    .list-header .seguir-author-blog.show {
+        display: block !important;
+    }
+}
+
+/*MOBILE*/
+@media screen and (max-width: 991px) {
+    .list-item #botao-seguir-author-blog {
+        position: relative;
+    }
+    .alert_onboarding {
+        display: none;
+        position: absolute;
+        z-index: 9;
+        top: 20px;
+        padding: 12px;
+        cursor: context-menu;
+        border-radius: 10px;
+        background-color: #000;
+        text-transform: none;
+        text-align: left;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 0px;
+        color: #ffffff;
+        width: 300px;
+        left: 50%;
+        margin-left: -150px;
+    }
+    .archive .alert_onboarding,
+    .list-header .alert_onboarding {
+        left: auto !important;
+        margin-left:auto !important;
+    }
+    .author .list-header .seguir-author{
+        display: block !important;
+    }
+    .salvar-conteudo-materia .alert_onboarding {
+        margin-left: -270px;
+        top: -70px;
+    }
+}
