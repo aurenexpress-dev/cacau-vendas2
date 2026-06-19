@@ -2554,8 +2554,44 @@ function trackPage() {
 <script src="js/gretel.min.js" type="text/javascript" async="async"></script>
 
 <script>
-$(document).ready(function () {
-    $('#pdpCarousel-1002638').carousel();
+document.addEventListener("DOMContentLoaded", function() {
+    const carousel = document.querySelector("#pdpCarousel-1002638");
+
+    if (!carousel) return;
+
+    const nextBtn = carousel.querySelector(".carousel-control-next");
+    const prevBtn = carousel.querySelector(".carousel-control-prev");
+
+    function showSlide(direction) {
+        const slides = carousel.querySelectorAll(".carousel-item");
+        let active = carousel.querySelector(".carousel-item.active");
+
+        let currentIndex = Array.from(slides).indexOf(active);
+
+        active.classList.remove("active");
+
+        if (direction === "next") {
+            currentIndex = (currentIndex + 1) % slides.length;
+        } else {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        }
+
+        slides[currentIndex].classList.add("active");
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            showSlide("next");
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", function(e) {
+            e.preventDefault();
+            showSlide("prev");
+        });
+    }
 });
 </script>
 </body></html>
